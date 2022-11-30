@@ -1,0 +1,22 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "web app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VasiliiOrekhov/06-js-startkit.git"
+  },
+  "author": "vasilii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VasiliiOrekhov/06-js-startkit/issues"
+  },
+  "homepage": "https://github.com/VasiliiOrekhov/06-js-startkit#readme",
+  "devDependencies": {
+    "parcel": "^2.8.0"
+  }
+}

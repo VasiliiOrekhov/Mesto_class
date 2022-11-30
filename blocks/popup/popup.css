@@ -8,13 +8,31 @@
 
 .popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  top: calc((100% - 376px) / 2);
+  left: calc((100% - 430px) / 2);
+  width: 430px;
+  height: 376px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
   align-items: center;
   justify-content: center;
   display: none;
+  z-index: 10;
+}
+
+.popup-opened {
+  display: flex;
+}
+
+.popup-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.popup-background-opened {
+  display: block;
 }
