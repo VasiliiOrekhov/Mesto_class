@@ -1,4 +1,4 @@
-import { placesList } from './constants.js';
+import { placesList } from './constants';
 
 export function renderCard(name, link) {
   const template = `<div class="place-card">

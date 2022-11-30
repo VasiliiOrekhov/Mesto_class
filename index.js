@@ -6,12 +6,12 @@ import {
   newCardHeandler,
   openFormButton,
   popupBackground,
-} from './js/constants.js';
+} from './js/constants';
 // методы работы с карточками
-import { renderCard } from './js/renderCard.js';
-import { likeHandler } from './js/likeHandler.js';
-import { openForm, closeForm } from './js/popup.js';
-import { addCard, deleteCard } from './js/card.js';
+import { renderCard } from './js/renderCard';
+import { likeHandler } from './js/likeHandler';
+import { openForm, closeForm } from './js/popup';
+import { addCard, deleteCard } from './js/card';
 
 //отрисовываем первые 10 карточек
 initialCards.forEach(function (initialCard) {

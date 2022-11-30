@@ -2,9 +2,11 @@
   "name": "mesto",
   "version": "1.0.0",
   "description": "web app",
-  "main": "script.js",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean:output": "rimraf dist",
+    "dev": "parcel ./index.html -p 3000 --open",
+    "build": "parcel build ./index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/VasiliiOrekhov/06-js-startkit#readme",
   "devDependencies": {
+    "rimraf": "3.0.2",
     "parcel": "^2.8.0"
   }
 }

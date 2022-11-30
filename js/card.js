@@ -1,6 +1,6 @@
-import { renderCard } from './renderCard.js';
-import { form } from './constants.js';
-import { closeForm } from './popup.js';
+import { renderCard } from './renderCard';
+import { form } from './constants';
+import { closeForm } from './popup';
 
 export function addCard(event) {
   event.preventDefault();

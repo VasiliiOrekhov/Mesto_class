@@ -1,4 +1,4 @@
-import { popup, popupBackground } from './constants.js';
+import { popup, popupBackground } from './constants';
 
 export function openForm(event) {
   popup.classList.add('popup-opened');
