@@ -1,3 +1,4 @@
+console.log('fjfjfj');
 //константы
 import {
   placesList,
