@@ -1,14 +1,14 @@
 import { renderCard } from './renderCard';
-import { form } from './constants';
-import { closeForm } from './popup';
+import { formCard, addNewCardForm } from './constants';
+import { closePlaceForm } from './popup';
 
 export function addCard(event) {
   event.preventDefault();
   const name = addNewCardForm.elements.name.value;
   const link = addNewCardForm.elements.link.value;
   renderCard(name, link);
-  form.reset();
-  closeForm();
+  formCard.reset();
+  closePlaceForm();
 }
 
 //удаляем карточку

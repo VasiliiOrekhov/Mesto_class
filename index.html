@@ -43,11 +43,11 @@
         </div> -->
         <!-- конец примера. -->
       </div>
-      <div class="popup">
+      <div class="popup popup-place">
         <div class="popup__content">
-          <img src="./images/close.svg" alt="" class="popup__close" />
+          <img src="./images/close.svg" alt="" class="popup__close popup__close_place" />
           <h3 class="popup__title">Новое место</h3>
-          <form class="popup__form" name="new">
+          <form class="popup__form popup__form_card" name="new">
             <input
               type="text"
               name="name"
@@ -60,7 +60,28 @@
               class="popup__input popup__input_type_link-url"
               placeholder="Ссылка на картинку"
             />
-            <button type class="button popup__button">+</button>
+            <button type class="button popup__button popup__button_card">+</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup-profile">
+        <div class="popup__content">
+          <img src="./images/close.svg" alt="" class="popup__close popup__close_profile" />
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form class="popup__form popup__form_author" name="profile">
+            <input
+              type="text"
+              name="names"
+              class="popup__input popup__input_type_name"
+              placeholder="Имя"
+            />
+            <input
+              type="text"
+              name="author"
+              class="popup__input popup__input_type_author"
+              placeholder="О себе"
+            />
+            <button type class="button popup__button popup__button_profile">Сохранить</button>
           </form>
         </div>
       </div>
@@ -72,6 +93,7 @@
     <script src="./js/likeHandler.js" type="module"></script>
     <script src="./js/card.js" type="module"></script> -->
     <!-- <script src="script.js" type="module"></script> -->
+    <!-- необходимо добавить .js на все экспорты -->
     <!-- новое -->
     <script src="index.js" type="module"></script>
   </body>
