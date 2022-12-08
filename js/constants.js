@@ -68,3 +68,14 @@ export const editProfileForm = document.querySelector('.popup__form_author');
 export const editProfileHeandler = document.querySelector('.popup__button_profile');
 //убираем форму
 export const closeProfileFormButton = document.querySelector('.popup__close_profile');
+
+//открываем карточку
+//export const openCardButton = document.querySelector('.place-card__image');
+export const popupOpenImg = document.querySelector('.popup-open_img');
+export const closeImgFormButton = document.querySelector('.popup__close_img');
+
+//валидация форм
+export const name = formCard.elements.name;
+export const link = formCard.elements.link;
+export const names = formProfile.elements.names;
+export const author = formProfile.elements.author;

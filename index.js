@@ -3,17 +3,29 @@ import {
   placesList,
   closePlaceFormButton,
   closeProfileFormButton,
+  closeImgFormButton,
   initialCards,
   newCardHeandler,
   openFormButton,
   popupBackground,
   openFormProfileButton,
   editProfileHeandler,
+  formCard,
+  formProfile,
 } from './js/constants';
 // методы работы с карточками
 import { renderCard } from './js/renderCard';
 import { likeHandler } from './js/likeHandler';
-import { openPlaceForm, closePlaceForm, openProfileForm, closeProfileForm } from './js/popup';
+import {
+  openPlaceForm,
+  closePlaceForm,
+  openProfileForm,
+  closeProfileForm,
+  openCardForm,
+  closeCardForm,
+  newCardVallid,
+  editProfileVallid,
+} from './js/popup';
 import { addCard, deleteCard } from './js/card';
 import { editProfile } from './js/profile';
 
@@ -39,9 +51,17 @@ function addEvents() {
   // слушатель для создания новой формы
   newCardHeandler.addEventListener('click', addCard);
   //слушатель для формы изменения профиля
-  editProfileHeandler.addEventListener('click', editProfile); // new...izmenit
+  editProfileHeandler.addEventListener('click', editProfile);
 
   // слушатель для удаления формы
   placesList.addEventListener('click', deleteCard);
+
+  // слушатель открытия карточки
+  placesList.addEventListener('click', openCardForm);
+  closeImgFormButton.addEventListener('click', closeCardForm);
+  //слушатели для валидации форм
+  formCard.addEventListener('input', newCardVallid);
+  formProfile.addEventListener('input', editProfileVallid);
 }
+
 addEvents();

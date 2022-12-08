@@ -7,7 +7,6 @@ export function editProfile(event) {
   let author = editProfileForm.elements.author.value;
   userName.textContent = names;
   userJob.textContent = author;
-
   formProfile.reset();
   closeProfileForm();
 }
