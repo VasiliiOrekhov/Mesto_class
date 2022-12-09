@@ -25,6 +25,7 @@ import {
   closeCardForm,
   newCardVallid,
   editProfileVallid,
+  formValid,
 } from './js/popup';
 import { addCard, deleteCard } from './js/card';
 import { editProfile } from './js/profile';
@@ -61,6 +62,7 @@ function addEvents() {
   closeImgFormButton.addEventListener('click', closeCardForm);
   //слушатели для валидации форм
   formCard.addEventListener('input', newCardVallid);
+  formCard.addEventListener('input', formValid);
   formProfile.addEventListener('input', editProfileVallid);
 }
 

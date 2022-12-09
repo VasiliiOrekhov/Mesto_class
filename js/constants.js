@@ -79,3 +79,4 @@ export const name = formCard.elements.name;
 export const link = formCard.elements.link;
 export const names = formProfile.elements.names;
 export const author = formProfile.elements.author;
+export const validError = document.querySelector('.popup__error');
