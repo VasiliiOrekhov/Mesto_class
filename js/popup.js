@@ -9,44 +9,49 @@ import {
   author,
   newCardHeandler,
   editProfileHeandler,
-  validError,
+  allValidError,
+  formCard,
+  formProfile,
 } from './constants';
 //форма создания новой карточки
-export function openPlaceForm(event) {
+export function openPlaceForm() {
   popupPlace.classList.add('popup-opened');
   popupBackground.classList.add('popup-background-opened');
-  //popup.style.display = 'flex';
 }
-export function closePlaceForm(event) {
+export function closePlaceForm() {
   popupPlace.classList.remove('popup-opened');
   popupBackground.classList.remove('popup-background-opened');
-  validError.textContent = '';
+  allValidError.textContent = '';
+  formCard.reset();
 }
-//валидация формы новой карточки
-export function newCardVallid(event) {
-  if (name.value.length < 2 || link.value.length === 0) {
-    newCardHeandler.setAttribute('disabled', true);
-    newCardHeandler.classList.remove('popup__button_no');
-  } else {
+//валидация кнопки формы новой карточки
+export function newCardVallid() {
+  if (name.validity.valid && link.validity.valid) {
     newCardHeandler.removeAttribute('disabled');
     newCardHeandler.classList.add('popup__button_no');
+  } else {
+    newCardHeandler.setAttribute('disabled', true);
+    newCardHeandler.classList.remove('popup__button_no');
   }
 }
+// валидация ошибок форм
 export function formValid(event) {
-  if (name.validity.valid) {
+  const formEvent = event.target;
+  const validError = formEvent.nextSibling;
+  if (formEvent.validity.valid) {
     validError.textContent = '';
     validError.className = 'popup__error';
   } else {
-    showError();
-  }
-}
-function showError() {
-  if (name.validity.valueMissing) {
-    // Если поле пустое
-    validError.textContent = 'Это обязательное поле';
-  } else if (name.validity.tooShort) {
-    // Если содержимое короткое
-    validError.textContent = 'Должно быть от 2 до 30 символов';
+    if (formEvent.validity.valueMissing) {
+      // Если поле пустое
+      validError.textContent = 'Это обязательное поле';
+    } else if (formEvent.validity.tooShort) {
+      // Если содержимое короткое
+      validError.textContent = 'Должно быть от 2 до 30 символов';
+    } else if (formEvent.validity.patternMismatch) {
+      // Если в поле link не ссылка
+      validError.textContent = 'Здесь должна быть ссылка';
+    }
   }
 }
 
@@ -58,15 +63,17 @@ export function openProfileForm(event) {
 export function closeProfileForm(event) {
   popupProfile.classList.remove('popup-opened');
   popupBackground.classList.remove('popup-background-opened');
+  formProfile.reset();
+  allValidError.textContent = '';
 }
 //валидация формы изменения профиля
-export function editProfileVallid(event) {
-  if (names.value.length === 0 || author.value.length === 0) {
-    editProfileHeandler.setAttribute('disabled', true);
-    editProfileHeandler.classList.remove('popup__button_no');
-  } else {
+export function editProfileVallid() {
+  if (names.validity.valid && author.validity.valid) {
     editProfileHeandler.removeAttribute('disabled');
     editProfileHeandler.classList.add('popup__button_no');
+  } else {
+    editProfileHeandler.setAttribute('disabled', true);
+    editProfileHeandler.classList.remove('popup__button_no');
   }
 }
 
@@ -81,6 +88,6 @@ export function openCardForm(event) {
     popupOpenImg.classList.add('popup-opened-img');
   }
 }
-export function closeCardForm(event) {
+export function closeCardForm() {
   popupOpenImg.classList.remove('popup-opened-img');
 }

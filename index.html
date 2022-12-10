@@ -59,11 +59,14 @@
             />
             <span class="popup__error"></span>
             <input
-              type="text"
+              type="url"
               name="link"
               class="popup__input popup__input_type_link-url"
               placeholder="Ссылка на картинку"
+              pattern="https://.*"
+              required
             />
+            <span class="popup__error"></span>
             <button type class="button popup__button popup__button_card">+</button>
           </form>
         </div>
@@ -78,13 +81,21 @@
               name="names"
               class="popup__input popup__input_type_name"
               placeholder="Имя"
+              minlength="2"
+              maxlength="30"
+              required
             />
+            <span class="popup__error"></span>
             <input
               type="text"
               name="author"
               class="popup__input popup__input_type_author"
               placeholder="О себе"
+              minlength="2"
+              maxlength="30"
+              required
             />
+            <span class="popup__error"></span>
             <button type class="button popup__button popup__button_profile">Сохранить</button>
           </form>
         </div>

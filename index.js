@@ -64,6 +64,7 @@ function addEvents() {
   formCard.addEventListener('input', newCardVallid);
   formCard.addEventListener('input', formValid);
   formProfile.addEventListener('input', editProfileVallid);
+  formProfile.addEventListener('input', formValid);
 }
 
 addEvents();
