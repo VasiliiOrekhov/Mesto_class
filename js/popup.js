@@ -21,10 +21,14 @@ export function openPlaceForm() {
 export function closePlaceForm() {
   popupPlace.classList.remove('popup-opened');
   popupBackground.classList.remove('popup-background-opened');
-  allValidError.textContent = '';
+  //сброс ошибок и полей формы
+  allValidError.forEach(function (item) {
+    item.textContent = '';
+  });
   formCard.reset();
 }
-//валидация кнопки формы новой карточки
+
+//активация кнопки формы новой карточки
 export function newCardVallid() {
   if (name.validity.valid && link.validity.valid) {
     newCardHeandler.removeAttribute('disabled');
@@ -37,10 +41,9 @@ export function newCardVallid() {
 // валидация ошибок форм
 export function formValid(event) {
   const formEvent = event.target;
-  const validError = formEvent.nextSibling;
+  const validError = formEvent.nextSibling.nextSibling;
   if (formEvent.validity.valid) {
     validError.textContent = '';
-    validError.className = 'popup__error';
   } else {
     if (formEvent.validity.valueMissing) {
       // Если поле пустое
@@ -56,17 +59,19 @@ export function formValid(event) {
 }
 
 //форма изменения профиля
-export function openProfileForm(event) {
+export function openProfileForm() {
   popupProfile.classList.add('popup-opened');
   popupBackground.classList.add('popup-background-opened');
 }
-export function closeProfileForm(event) {
+export function closeProfileForm() {
   popupProfile.classList.remove('popup-opened');
   popupBackground.classList.remove('popup-background-opened');
   formProfile.reset();
-  allValidError.textContent = '';
+  allValidError.forEach(function (item) {
+    item.textContent = '';
+  });
 }
-//валидация формы изменения профиля
+//активация кнопки формы изменения профиля
 export function editProfileVallid() {
   if (names.validity.valid && author.validity.valid) {
     editProfileHeandler.removeAttribute('disabled');
@@ -80,11 +85,8 @@ export function editProfileVallid() {
 //форма открывания карточки
 export function openCardForm(event) {
   if (event.target.classList.contains('place-card__image')) {
-    //поменять с bgimg на img
-    // console.log(event.target.style.backgroundImage);
-    // console.log(event.target.getAttribute('style'));
-    const backgroundImg = event.target.getAttribute('style');
-    popupOpenImg.setAttribute('style', backgroundImg);
+    const imgIncrease = document.querySelector('.popup__img_increase');
+    imgIncrease.src = event.target.style.backgroundImage.slice(5, -2);
     popupOpenImg.classList.add('popup-opened-img');
   }
 }

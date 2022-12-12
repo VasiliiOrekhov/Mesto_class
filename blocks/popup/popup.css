@@ -6,6 +6,7 @@
 @import url(./__button/popup__button.css);
 @import url(./_is-opened/popup_is-opened.css);
 @import url(./__error/popup__error.css);
+@import url(./__img_increase/popup__img_increase.css);
 
 .popup {
   position: fixed;
@@ -26,8 +27,11 @@
 }
 .popup-opened-img {
   display: flex;
-  width: 80vw;
-  height: 80vh;
+  /* width: 80vw;
+  height: 80vh; */
+  width: max-content;
+  height: max-content;
+  object-fit: contain;
   margin: auto;
   top: 0;
   left: 0;
