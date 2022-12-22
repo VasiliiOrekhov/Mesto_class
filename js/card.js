@@ -31,7 +31,7 @@ export class Card {
         </div>
     </div>`;
 
-    //превращает строку карточки в node
+    //превращает строку карточки вnode
     const node = document.createRange().createContextualFragment(template);
     return node;
   }
