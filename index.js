@@ -11,7 +11,6 @@ const card = new Card();
 
 const cardList = new CardList(initialCards);
 cardList.init();
-
 const userInfo = new UserInfo();
 
 const formValidator = new FormValidator();
